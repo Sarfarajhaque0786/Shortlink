@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ShortLink – URL Shortener</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">🔗 ShortLink</div>
+    <div id="nav-links">
+      <a href="#" onclick="showAuth('login')">Login</a>
+      <a href="#" onclick="showAuth('register')">Register</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Shorten a long URL</h1>
+    <p class="subtitle">Fast, cached, analytics-backed link shortening.</p>
+
+    <div class="card" id="auth-card" style="display:none;">
+      <div class="form-row">
+        <input id="auth-name" placeholder="Name" style="display:none;" />
+        <input id="auth-email" placeholder="Email" />
+        <input id="auth-password" type="password" placeholder="Password" />
+        <button id="auth-submit" onclick="submitAuth()">Login</button>
+      </div>
+      <div class="error-text" id="auth-error"></div>
+    </div>
+
+    <div class="card">
+      <div class="form-row">
+        <input id="long-url" placeholder="https://example.com/your/very/long/url" />
+        <input id="custom-alias" placeholder="Custom alias (optional)" style="max-width:200px;" />
+        <button onclick="shorten()">Shorten</button>
+      </div>
+      <div class="error-text" id="shorten-error"></div>
+      <div class="result-box" id="result-box">
+        Short URL: <a id="result-link" target="_blank"></a>
+        <button class="link-btn" onclick="copyResult()">Copy</button>
+      </div>
+    </div>
+
+    <p>Already have links? <a href="/dashboard.html">Go to your dashboard →</a></p>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

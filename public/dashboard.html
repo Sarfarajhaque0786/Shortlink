@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dashboard – ShortLink</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="brand">🔗 ShortLink</div>
+    <div><a href="/">Home</a> <a href="#" onclick="logout()">Logout</a></div>
+  </nav>
+
+  <div class="container">
+    <h1>Your links</h1>
+    <p class="subtitle">Click a short code to see analytics.</p>
+
+    <div class="card">
+      <table>
+        <thead>
+          <tr><th>Short URL</th><th>Original</th><th>Clicks</th><th>Status</th><th></th></tr>
+        </thead>
+        <tbody id="url-table-body"></tbody>
+      </table>
+    </div>
+
+    <div class="card" id="stats-card" style="display:none;">
+      <h2 id="stats-title"></h2>
+      <canvas id="clicks-chart" height="100"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="/js/app.js"></script>
+  <script src="/js/dashboard.js"></script>
+</body>
+</html>
