@@ -50,7 +50,7 @@ shortlink/
 A **302** (temporary) redirect is used deliberately, not 301, so browsers don't permanently cache the redirect — this keeps click analytics accurate and lets expiry/deactivation take effect immediately.
 
 ## Setup (Local Defaults)
-```bash
+``bash
 npm install
 cp .env.example .env       # defaults already point at localhost Mongo/Redis
 npm run dev                # or: npm start
